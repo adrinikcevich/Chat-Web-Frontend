@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Chat Web</title>
+        <link rel="stylesheet" type="text/css" href="estilo.css"> 
+        <link rel="stylesheet" type="text/css" href="normalize.css"> 
+        <link rel="stylesheet" type="text/css" href="animations.css"> 
+        
+        <!--Google Fonts-->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Baloo+Bhaijaan+2:wght@800&family=Comfortaa:wght@300;500;700&family=Cuprum:wght@500&family=Dongle:wght@300&family=Montserrat+Alternates:ital@0;1&family=Nunito:wght@700&family=Pacifico&family=Rajdhani:wght@300;700&family=Roboto&family=Tajawal:wght@200;300&family=Ubuntu+Mono&display=swap" rel="stylesheet">
+
+        <meta charset="UTF-8">
+        <meta name="description" content="Ejemplo de Frontend de un chat web, utilizando un diseño simple y moderno.">
+        <meta name="keywords" content="chat web, frontend, indexedDB, moderno,responsive">
+        
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+
+
+        <script src="https://kit.fontawesome.com/66abc61ad9.js" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <div id="modal-contactos">
+            <div class="m-container">
+                <div class="modal-header">
+                    <div class="modal-header-animation">Contacto Añadido</div>
+                    <div class="boton-cerrar"><i class="fas fa-backward"></i></div>
+                    <h1 class="modal-title">Nuevo Contacto</h1>
+                </div>
+                <fieldset class="modal-inputs-container">
+                    <div>
+                        <h2 class="modal-input__title">Nombre</h2>
+                        <input type="text" id="input-nombre" autocomplete="off" minlength="4" maxlength="25">
+                    </div>
+                    <div>
+                        <h2 class="modal-input__title">Email</h2>
+                        <input type="email" id="input-email" required="" autocomplete="disabled">
+                    </div>
+                    <button class="boton-añadir">Añadir</button>
+                </fieldset>
+                <div class="modal-warnings-container">
+                    <div class="modal-warning">
+                        <p></p>
+                        <i class="fas fa-exclamation-triangle"></i>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+        <div class="modal-eliminar-container hidden">
+            <div class="modal-eliminar">
+                <p class="modal-eliminar-text"></p>
+                <div class="modal-eliminar-img-container">
+                    <img class="modal-eliminar-img" src="">
+                </div>
+                <div class="modal-eliminar-btn-container">
+                    <button class="modal-eliminar-btnSi">Si</button>
+                    <button class="modal-eliminar-btnNo">No</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="contenedor">
+            <div id="contactos">
+                <div class="contactos-header">
+                    <h2>Contactos</h2>
+                    <div class="contactos-header-btncontainer">
+                        <div id="añadirContacto" class="contactos-boton"><i class="fas fa-plus"></i></div>
+                        <div id="eliminarContacto" class="contactos-boton"><i class="fas fa-trash-alt"></i></div>
+                    </div>
+                </div>
+                <div id="lista-contactos">
+                </div>
+            </div>
+            
+            <div id="chat-contenedor" class="chat-contenedor">
+                <div class="modal-ocultarchat">
+                    <h1>Ningún contacto seleccionado</h1>
+                </div>
+                <div class="chat-header">
+                    <div class="responsiveBtn-container">
+                        <span class="iconify" data-icon="akar-icons:circle-triangle-left-fill"></span>
+                    </div>
+                    <div class="chat-info__user">
+                        <div class="chat-info__user-imgContainer">
+                            <img src="https://i.pinimg.com/474x/2a/2e/7f/2a2e7f0f60b750dfb36c15c268d0118d.jpg" class="chat-info__pfp">
+                        </div>
+                        <div class="chat-info__user-dataContainer">
+                            <h2 id="chat-nombre"></h2>
+                            <h6 id="chat-telefono"></h6>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="chat">
+
+                </div>
+
+                <div class="chat-footer">
+                    <div class="inputs-contenedor">
+                        <input type="text" id="escribir" placeholder="Escribe un mensaje...">
+                        <button id="boton-enviar">Enviar</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <script src="/js/index.js" type="module"></script>
+        <script src="https://unpkg.com/dayjs@1.8.21/dayjs.min.js"></script>
+        <script src="https://code.iconify.design/2/2.1.2/iconify.min.js"></script>
+
+    </body>
+</html>
